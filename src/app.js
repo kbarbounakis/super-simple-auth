@@ -4,7 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
 import passport from 'passport';
-import authRouter from './routes/auth';
+import {authRouter} from './routes/auth';
 import logger from 'morgan';
 import { ExpressDataApplication, serviceRouter, dateReviver } from '@themost/express';
 import indexRouter from './routes/index';
@@ -12,7 +12,8 @@ import { DataConfigurationStrategy } from '@themost/data';
 import {ViewEngine} from '@themost/ejs';
 import '@themost/json/register';
 import { Authenticator } from './services/Authenticator';
-import {sassMiddleware} from './sass';
+import debug from 'debug';
+const error = debug('app:error');
 /**
  * @name Request#context
  * @description Gets an instance of ExpressDataContext class which is going to be used for data operations
@@ -82,6 +83,7 @@ function getApplication() {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
+    error(err);
     const status = err.status || err.statusCode || 500;
     // render the error page
     res.status(status);

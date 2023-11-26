@@ -2,8 +2,8 @@
     "version": 3,
     "sourceRoot": "",
     "sources": [
-        "file:///workspace/super-simple-auth/assets/stylesheets/_error.scss",
-        "file:///workspace/super-simple-auth/assets/stylesheets/style.scss"
+        "file:///home/kbarbounakis/Projects/github/themost-framework/super-simple-auth/assets/stylesheets/_error.scss",
+        "file:///home/kbarbounakis/Projects/github/themost-framework/super-simple-auth/assets/stylesheets/style.scss"
     ],
     "names": [],
     "mappings": "AAAA;EACI;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAGJ;EACI;EACA;EACA;EACA;;AAGJ;EACE;EACA;;AAGF;EACI;EACA;EACA;EACA;;AACA;EACI;EACA;EACA;EACA;;;AAQd;EACE;IACE;IACA;;EAEF;IACE;;;ACxDN;EACI;;;AAIJ;EACI;IACI;;;AAIR;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;AACA;EACE;;AAEF;EACE;;AAEF;EACE;EACA;EACA;EACQ;EACR;EACA;;AACA;EACE"

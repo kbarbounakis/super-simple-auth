@@ -10,6 +10,7 @@
     "clean": "rimraf dist",
     "build": "rimraf dist && babel src --out-dir dist --copy-files --source-maps",
     "themost": "themost",
+    "build:css": "postcss assets/styles/tailwind.css -o assets/styles/style.css",
     "start": "nodemon bin/serve.js",
     "test": "jasmine",
     "debug": "nodemon --inspect-brk bin/serve.js"
@@ -23,26 +24,30 @@
     "@babel/preset-typescript": "^7.18.6",
     "@babel/register": "^7.18.9",
     "@babel/runtime": "^7.20.7",
+    "@tailwindcss/forms": "^0.5.7",
     "@types/express": "^4.17.15",
     "@types/lodash": "^4.14.191",
     "@types/passport": "^1.0.0",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.31.0",
     "module-alias": "^2.2.2",
-    "nodemon": "^2.0.20",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@themost/client": "^2.5.6",
-    "@themost/common": "^2.5.12",
-    "@themost/data": "^2.9.3",
+    "@themost/client": "^2.11.0",
+    "@themost/common": "^2.10.4",
+    "@themost/data": "^2.11.0",
     "@themost/ejs": "^2.0.1",
-    "@themost/express": "^1.5.24",
+    "@themost/express": "^1.6.2",
     "@themost/json": "^1.0.1",
     "@themost/jspa": "^1.2.2",
     "@themost/node": "^2.5.0",
-    "@themost/query": "^2.9.7",
-    "@themost/sqlite": "^2.6.12",
+    "@themost/query": "^2.11.1",
+    "@themost/sqlite": "^2.6.16",
     "@themost/xml": "^2.5.2",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",
@@ -60,7 +65,8 @@
     "password-validator": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "tailwindcss": "^3.3.5"
   },
   "nodemonConfig": {
     "watch": [
@@ -72,8 +78,9 @@
     ],
     "verbose": true,
     "legacy-watch": true,
+    "delay": "2000",
     "execMap": {
-      "js": "node --require ./src/sass --require ./spec/helpers/babel --require ./spec/helpers/module-alias"
+      "js": "node --require ./spec/helpers/babel --require ./spec/helpers/module-alias"
     },
     "env": {
       "PORT": 3000,
